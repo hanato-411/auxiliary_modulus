@@ -1,4 +1,4 @@
-# register_effect_public
+# auxiliary_modulus
 
 This repository contains the training and dataset-generation workflow for modular-addition experiments.
 
