@@ -1,0 +1,23 @@
+add:
+  q_list: [31,97,257]
+  N_list: [8,16,32,64,128]
+  qN_pairs: []
+
+  sample_size_pairs:
+    - train: 100000
+      test: 10000
+    - train: 1000000
+      test: 10000
+    - train: 10000000
+      test: 10000
+
+  dataset_types:
+    - add_Kq
+    - default
+    - inv_sqrt
+
+  gpu_ids: null
+  save_dir_template: "data/N{N}_q{q}/{type}"
+  random_seed: 42
+  backend: "multiprocessing"
+  n_jobs: -1

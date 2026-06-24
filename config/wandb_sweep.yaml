@@ -1,0 +1,46 @@
+name: sweep_name
+project: auxiliary_modulo_effect
+method: grid
+metric:
+  name: final_success_rate
+  goal: maximize
+
+command:
+  - ${env}
+  - sage
+  - train/train.py
+
+parameters:
+  # dataset / task
+  train.q:
+    values: [31,257]
+  train.N:
+    values: [16,32]
+  train.train_size:
+    values: ["100K", "1M"]
+
+  # proposed vs baseline-like modes for public release
+  train.mode:
+    values: ["mod_Kq"]
+  model.embed_type:
+    values: [token, angular]
+
+
+  # mode で "mod_Kq" を使う実験を回すときは、以下の train.K / train.ratio をコメントアウト解除してください。
+  train.K:
+    values: [4,5]
+  train.ratio:
+    values: [0.3, 0.4]
+
+  # モデル構成（norm_first / bias / weight_init / dropout）を変更して比較する場合は、
+  # 以下の model.* をコメントアウト解除してください。
+  # model
+  # model.norm_first:
+  #   values: [true]
+  # model.bias:
+  #   values: [true]
+  # model.weight_init:
+  #   values: [true]
+  # model.dropout:
+  #   values: [0.0]
+

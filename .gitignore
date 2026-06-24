@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environments
+.venv/
+env/
+
+# Training outputs
+results/
+wandb/
+data/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
